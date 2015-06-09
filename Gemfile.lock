@@ -227,6 +227,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootstrap-sass
   capybara
   coffee-rails (~> 4.1.0)
