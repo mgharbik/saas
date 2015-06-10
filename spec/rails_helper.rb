@@ -6,8 +6,11 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'database_cleaner'
 require 'capybara/rspec'
+require 'support/macros'
 
 ActiveRecord::Migration.maintain_test_schema!
+
+Capybara.app_host = 'http://example.com'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -25,5 +28,7 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    Apartment::Tenant.reset
+    drop_schemas
   end
 end
