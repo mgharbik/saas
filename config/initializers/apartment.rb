@@ -23,7 +23,7 @@ Apartment.configure do |config|
   # config.tenant_names = lambda{ Customer.pluck(:tenant_name) }
   # config.tenant_names = ['tenant1', 'tenant2']
   #
-  config.tenant_names = lambda { ToDo_Tenant_Or_User_Model.pluck :database }
+  # config.tenant_names = lambda { ToDo_Tenant_Or_User_Model.pluck :database }
 
   #
   # ==> PostgreSQL only options

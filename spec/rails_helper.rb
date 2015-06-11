@@ -14,6 +14,8 @@ Capybara.app_host = 'http://example.com'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include EmailSpec::Helpers
+  config.include EmailSpec::Matchers
   # config.include Devise::TestHelpers, type: :controller
   config.order = "random"
 
@@ -31,5 +33,6 @@ RSpec.configure do |config|
     Apartment::Tenant.reset
     drop_schemas
     Capybara.app_host = 'http://example.com'
+    reset_mailer
   end
 end

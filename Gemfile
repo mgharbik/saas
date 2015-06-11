@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 gem 'pg'
 gem 'devise'
+gem 'devise_invitable'
 gem 'apartment'
 
 gem 'sass-rails', '~> 5.0'
@@ -24,4 +25,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'pry'
+  gem 'letter_opener'
+  gem 'email_spec'
 end
