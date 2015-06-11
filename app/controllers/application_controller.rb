@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   before_action :load_schema, :authenticate_user!
@@ -11,10 +9,10 @@ private
   	return unless request.subdomain.present?
 
   	if account = Account.find_by(subdomain: request.subdomain)
-  	  Apartment::Tenant.switch!(request.subdomain) 
+  	  Apartment::Tenant.switch!(request.subdomain)
   	else
   	  redirect_to root_url(subdomain: false)
-  	end  	 	
+  	end
   end
 
   def after_sign_out_path_for(resource_or_scope)
