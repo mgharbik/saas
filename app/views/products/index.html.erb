@@ -1,3 +1,18 @@
 <div class="col-md-12">
-  <div class="well">Hello! You can now sell products!</div>
+  <%= @products.each do |product| %>
+  	<h3>
+  	  <%= product.name %>
+  	  <small><%= product.client %></small>
+  	  <div class="pull-right">
+  	  	<%= link_to edit_product_path(product), class: "icon-link" do %>
+  	  	  <small><i class="glyphicon glyphicon-cog"></i></small>
+  	  	<% end %>
+  	  	<small><i class="glyphicon glyphicon-plus-sign"></i></small>
+  	  </div>
+  	</h3>
+
+  	<ul class="list-group">
+  	  <li class="list-group-item">No entries yet!</li>
+  	</ul>
+  <% end %>
 </div>

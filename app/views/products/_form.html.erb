@@ -1,0 +1,12 @@
+<%= simple_form_for(@product, wrapper_mappings: { boolean: :vertical_boolean }) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :client %>
+  
+  <% if @product.persisted? %>
+    <%= f.input :archived, as: :boolean %>
+  <% end %>
+
+  <%= f.button :submit, class: 'btn-primary' %>
+<% end %> 
